@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Event Management System</title>
+    <link rel="stylesheet" href="Background.css">
+    <style>
+        /* Additional styles specific to the events page */
+        .event-container {
+            position: relative;
+            margin-bottom: 60px; /* Adjust spacing between images */
+        }
+
+        .event-images img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 5px solid #fff; /* White border */
+            border-radius: 50%; /* Make it circular */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease; /* Add transition for smooth scaling */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        /* Scale up the image on hover */
+        .event-images img:hover {
+            transform: scale(1.3); /* Enlarge the image by 30% */
+        }
+
+        /* Overlay styles */
+        .event-overlay {
+            position: absolute;
+            bottom: -100px; /* Position below the image */
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            padding: 0px; /* Increase padding for better visibility */
+            border-radius: 0px; /* Round the corners */
+            opacity: 0; /* Initially hide the overlay */
+            transition: opacity 0.3s ease, bottom 0.3s ease; /* Add transition for smooth effect */
+        }
+
+        .event-container:hover .event-overlay {
+            opacity: 1; /* Show the overlay on hover */
+            bottom: -100px; /* Move the overlay up slightly */
+        }
+
+        .event-overlay p {
+            color: white;
+            font-weight: bold;
+            font-size: 40px; /* Increase font size */
+            margin: 0;
+            text-align: center; /* Center align the text */
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Helvetica Neue font */
+            white-space: nowrap; /* Display text in a single line */
+        }
+    </style>
+</head>
+<body>
+    <div class="bann">
+        <div class="navbar">
+            <img src="P Events-logos.jpeg" class="logo">
+            <ul>
+                <li><a href="Home Page.html">Home</a></li>
+                <li><a href="about us.html">About us</a></li>
+                <li><a href="Events Page.html">Events</a></li>
+                <li><a href="Contact Page.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="events-container">
+            <h2>EVENTS </h2>
+            <div class="event-images">
+                <div class="event-container">
+                    <a href="marriage_event.html"> <!-- Link to detailed page for Marriage Event -->
+                        <img src="MARRIAGE BACKGROUND.jpeg" alt="Event 1">
+                    </a>
+                    <div class="event-overlay">
+                        <p>Marriage Events</p>
+                    </div>
+                </div>
+                <div class="event-container">
+                    <a href="corporate_event.html"> <!-- Link to detailed page for Corporate Event -->
+                        <img src="TED x.png" alt="Event 2">
+                    </a>
+                    <div class="event-overlay">
+                        <p>Corporate Events</p>
+                    </div>
+                </div>
+                <div class="event-container">
+                    <a href="musical_event.html"> <!-- Link to detailed page for Musical Event -->
+                        <img src="Musical Fest Logo.jpeg" alt="Event 3">
+                    </a>
+                    <div class="event-overlay">
+                        <p>Musical Events</p>
+                    </div>
+                </div>
+                <!-- Add more images as needed -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling animation when clicking on an event image
+        document.querySelectorAll('.event-images img').forEach(image => {
+            image.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
